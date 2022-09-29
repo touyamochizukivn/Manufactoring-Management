@@ -1,10 +1,11 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Smartphone(models.Model):
     class Meta:
-        verbose_name = 'Smartphone'
-        verbose_name_plural = 'Smmartphones'
+        verbose_name = 'Smart Phone'
+        verbose_name_plural = 'Smart Phones'
 
     name = models.CharField(_(""), max_length=100),
     model = models.CharField(_(""), max_length=100),
