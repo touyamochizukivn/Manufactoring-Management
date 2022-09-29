@@ -4,8 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 class Smartphone(models.Model):
     class Meta:
-        verbose_name = 'Smart Phone'
-        verbose_name_plural = 'Smart Phones'
+        verbose_name = 'Smartphone'
+        verbose_name_plural = 'Smartphones'
 
     name = models.CharField(_("name"), max_length=100),
     model = models.CharField(_("model"), max_length=100),
