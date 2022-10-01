@@ -22,3 +22,14 @@ class Smartphone(models.Model):
     def __str__(self):
         return self.name
     
+
+class Component(models.Model):
+    class Meta:
+        verbose_name = 'Component'
+        verbose_name_plural = 'Components'
+    
+    name = models.CharField(_("name"), max_length=100)
+
+    def __str__(self):
+        return self.name
+    
