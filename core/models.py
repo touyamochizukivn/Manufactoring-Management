@@ -32,4 +32,55 @@ class Component(models.Model):
 
     def __str__(self):
         return self.name
+
+class MSmartphone(models.Model):
+    class Meta:
+        verbose_name = 'MSmartphone'
+        verbose_name_plural = 'MSmartphones'
+    
+    smartphone = models.ForeignKey(Smartphone, verbose_name=_("smartphone"), on_delete=models.CASCADE)
+    component = models.ForeignKey(Component, verbose_name=_("component"), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.smartphone
+
+class Customer(models.Model):
+    class Meta:
+        verbose_name = 'Customer'
+        verbose_name_plural = 'Customers'
+    
+    name = models.CharField(_("name"), max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Partners(models.Model):
+    class Meta:
+        verbose_name = 'Partners'
+        verbose_name_plural = 'Partners'
+    
+    name = models.CharField(_("name"), max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Contract(models.Model):
+    class Meta:
+        verbose_name = 'Contract'   
+        verbose_name_plural = 'Contracts'
+    
+    name = models.CharField(_("name"), max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Plan(models.Model):
+    class Meta:
+        verbose_name = 'Plan'
+        verbose_name_plural = 'Plans'
+    
+    name = models.CharField(_("name"), max_length=100)
+
+    def __str__(self):
+        return self.name
     
