@@ -13,8 +13,8 @@
         "**/manage.py": true,
         "**/tests.py": true,
         "**/apps.py": true,
-        "**/admin.py": true,
-        "**/migrations": true
+        // "**/admin.py": true,
+        // "**/migrations": true
     },
     "hide-files.files": [],
     "editor.tabSize": 4,
