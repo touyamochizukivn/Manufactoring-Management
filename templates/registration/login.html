@@ -1,87 +1,95 @@
 {% load static %}
 
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <!--IE Compatibility modes-->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--Mobile first-->
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Touya Mochizuki | Home</title>
-  <meta name="msapplication-TileColor" content="#5bc0de" />
-  <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
+  <title>AdminLTE 3 | Log in</title>
 
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <link rel="stylesheet" href="{% static 'assets/css/style-switcher.css' %}">
-  <link rel="stylesheet/less" type="text/css" href="{% static 'assets/less/theme.less' %}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
-
-  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/lib/metismenu/metisMenu.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/lib/onoffcanvas/onoffcanvas.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/lib/animate.css/animate.css' %}">
-
-  <script src="{% static 'assets/js/style-switcher.js' %}"></script>
-  <script src="{% static 'assets/lib/metismenu/metisMenu.js' %}"></script>
-  <script src="{% static 'assets/lib/onoffcanvas/onoffcanvas.js' %}"></script>
-  <script src="{% static 'assets/lib/screenfull/screenfull.js' %}"></script>
-  <script src="{% static 'assets/js/core.js' %}"></script>
-  <script src="{% static 'assets/js/app.js' %}"></script>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
 </head>
-
-<body class="login">
-
-  <div class="form-signin">
-    <div class="text-center">
-      <img src="{% static 'assets/img/logo.png' %}" alt="Metis Logo">
-    </div>
-    <hr>
-    <div class="tab-content">
-      <div id="login" class="tab-pane active">
-        <form method="post">
-          {% csrf_token %}
-          <p class="text-muted text-center">
-            Enter your username and password
-          </p>
-          {{form.as_p}}
-          <!-- <input type="text" placeholder="Username" class="form-control top"> -->
-          <!-- <input type="password" placeholder="Password" class="form-control bottom"> -->
-          <!-- <div class="checkbox">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div> -->
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        </form>
-      </div>
-    </div>
-    <hr>
-    <div class="text-center">
-      <ul class="list-inline">
-        <li><a class="text-muted" href="{% url 'password_reset' %}">Forgot Password</a></li>
-        <!-- <li><a class="text-muted" href="#signup">Signup</a></li> -->
-      </ul>
-    </div>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>Admin</b>LTE</a>
   </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
 
+      <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        {% comment %} <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div> {% endcomment %}
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
 
-  <!--jQuery -->
-  <script src="assets/lib/jquery/jquery.js"></script>
+      <div class="social-auth-links text-center mb-3">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+        </a>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+        </a>
+      </div>
+      <!-- /.social-auth-links -->
 
-  <!--Bootstrap -->
-  <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+      <p class="mb-1">
+        <a href="forgot-password.html">I forgot my password</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center">Register a new membership</a>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
 
-
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
 </body>
-
 </html>
