@@ -12,6 +12,8 @@ urlpatterns = [
         
     path('', dashboard, name='dashboard'),
 
+    path('test', test, name='test'),
+
     path('components/add', component_add, name='component_add'),
 
     path('suppliers/add', supplier_add, name='supplier_add'),

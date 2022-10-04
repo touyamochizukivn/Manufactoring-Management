@@ -1,11 +1,7 @@
 from django.contrib import admin
+from django.apps import apps
 
-from core.models import *
+app = apps.get_app_config('core')
 
-
-admin.site.register(Component)
-admin.site.register(Supplier)
-admin.site.register(WContract)
-admin.site.register(Product)
-
-
+for model_name, model in app.models.items():
+    admin.site.register(model)
